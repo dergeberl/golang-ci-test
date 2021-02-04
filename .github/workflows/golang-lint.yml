@@ -18,7 +18,7 @@ jobs:
           go get -u golang.org/x/lint/golint
       - name: Install golint
         run: |
-          golint .
+          golint -set_exit_status .
   vet:
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +29,7 @@ jobs:
           go-version: '1.15.7'
       - name: Install golint
         run: |
-          go vet -set_exit_status .
+          go vet .
   gosec:
     runs-on: ubuntu-latest
     steps:
