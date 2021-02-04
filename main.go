@@ -8,10 +8,11 @@ func main() {
 	fmt.Println("Hello World")
 	HelloWorld()
 	// test go vet
-	var world string
-	go func() {
-		world = "hello"
-	}()
+	//var world string
+	//go func() {
+	//	world = "hello"
+	//}()
+
 	//gosec test
 	username := "admin"
 	password := "CQP7qcDT6DZqh2qoqpvTTz8"
