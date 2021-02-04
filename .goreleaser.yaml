@@ -1,6 +1,15 @@
 project_name: golang-ci-test
+archives:
+  builds:
+  - golang-ci-test
+  format: binary
+  format_overrides:
+    - goos: windows
+      format: zip
+
 builds:
-  - env: [CGO_ENABLED=0]
+  - id: "golang-ci-test"
+    env: [CGO_ENABLED=0]
     goos:
       - linux
       - darwin
