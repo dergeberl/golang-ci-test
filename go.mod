@@ -1,1 +1,3 @@
-module "golang-ci-test"
+module golang-ci-test
+
+go 1.15
