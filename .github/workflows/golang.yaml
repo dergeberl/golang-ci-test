@@ -1,4 +1,4 @@
-name: golang lint
+name: golang
 
 on:
   push:
@@ -41,9 +41,21 @@ jobs:
         uses: securego/gosec@master
         with:
           args: ./...
+  test:
+    needs: [ lint, vet, gosec ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.15.7'
+      - name: Run go test
+        run: |
+          go test -v .
   build:
     if: success() && startsWith(github.ref, 'refs/tags/')
-    needs: [lint, vet, gosec]
+    needs: [lint, vet, gosec, test ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
