@@ -3,17 +3,16 @@ builds:
   - env: [CGO_ENABLED=0]
     goos:
       - linux
-      - windows
       - darwin
     goarch:
       - amd64
       - arm64
-#nfpms:
-#  - maintainer: Maximilian Geberl
-#    description: golang CI test repo
-#    homepage: https://github.com/dergeberl/golang-ci-test
-#    license: MIT
-#    formats:
-#      - deb
-#      - rpm
-#      - apk
+      - arm
+nfpms:
+ - maintainer: Maximilian Geberl
+   description: golang CI test repo
+   homepage: https://github.com/dergeberl/golang-ci-test
+   formats:
+     - deb
+     - rpm
+     - apk
