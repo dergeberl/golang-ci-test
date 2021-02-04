@@ -18,6 +18,7 @@ func main() {
 	_ = fmt.Sprintf("%v %v", username, password)
 }
 
+//HelloWorld returns Hello World
 func HelloWorld(){
 	fmt.Println("Hello World from func")
 }
