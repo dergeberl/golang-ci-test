@@ -1,11 +1,11 @@
 project_name: golang-ci-test
 archives:
-  builds:
-  - golang-ci-test
-  format: binary
-  format_overrides:
-    - goos: windows
-      format: zip
+  - builds:
+    - golang-ci-test
+    format: binary
+    format_overrides:
+      - goos: windows
+        format: zip
 
 builds:
   - id: "golang-ci-test"
