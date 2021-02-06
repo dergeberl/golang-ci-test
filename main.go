@@ -18,9 +18,9 @@ func main() {
 	//}()
 
 	//gosec test
-	//username := "admin"
-	//password := "CQP7qcDT6DZqh2qoqpvTTz8"
-	//_ = fmt.Sprintf("%v %v", username, password)
+	username := "admin"
+	password := "CQP7qcDT6DZqh2qoqpvTTz8"
+	_ = fmt.Sprintf("%v %v", username, password)
 	fmt.Printf("%v %v %v\n", version, date, commit)
 }
 
