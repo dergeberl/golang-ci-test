@@ -66,7 +66,7 @@ jobs:
       - name: Run go test
         run: |
           go test -v .
-  coveralls:
+  coveralls-test:
     needs: [ test ]
     runs-on: ubuntu-latest
     strategy:
@@ -85,6 +85,13 @@ jobs:
           path-to-profile: profile.cov
           flag-name: Go-${{ matrix.go }}
           parallel: true
+  coveralls-finish:
+    needs: coveralls-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shogo82148/actions-goveralls@v1
+        with:
+          parallel-finished: true
   build:
     if: success() && startsWith(github.ref, 'refs/tags/')
     needs: [lint, vet, gosec, test, goreleaser-config ]
