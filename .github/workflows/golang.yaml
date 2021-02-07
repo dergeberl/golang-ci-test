@@ -2,11 +2,10 @@ name: golang
 
 on:
   push:
-    branches:
-      - "*"
-    tags:
-      - 'v*'
-
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
 jobs:
   lint:
     runs-on: ubuntu-latest
