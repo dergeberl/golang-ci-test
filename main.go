@@ -28,3 +28,8 @@ func main() {
 func HelloWorld() {
 	fmt.Println("Hello World from func")
 }
+
+//NewFunc is here
+func NewFunc() {
+	fmt.Printf("new func")
+}
