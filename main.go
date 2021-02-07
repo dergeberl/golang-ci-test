@@ -22,6 +22,7 @@ func main() {
 	//password := "CQP7qcDT6DZqh2qoqpvTTz8"
 	//_ = fmt.Sprintf("%v %v", username, password)
 	fmt.Printf("%v %v %v\n", version, date, commit)
+	NewFunc()
 }
 
 //HelloWorld returns Hello World
