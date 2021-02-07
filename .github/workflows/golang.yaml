@@ -67,12 +67,12 @@ jobs:
         run: |
           go test -v .
   coveralls-test:
-    needs: [ test ]
+    needs: [ lint, vet, gosec ]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        go: [ '1.15' ]
+        go: ['1.11', '1.12', '1.13', '1.14', '1.15']
     steps:
       - uses: actions/setup-go@v1
         with:
